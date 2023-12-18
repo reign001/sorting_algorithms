@@ -1,5 +1,6 @@
 this is a group project.
 partner 1. (John Okpe) [https://github.com/reign001]
+partner 2. (Ekene samuel) [https://github.com/Ekenesamuel8]
 
 General
 Allowed editors: vi, vim, emacs
