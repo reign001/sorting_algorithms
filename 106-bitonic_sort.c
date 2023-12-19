@@ -5,7 +5,7 @@
 
 #include "sort.h"
 
-void swap(int *a, int *b);
+void swap_ints(int *a, int *b);
 void bitonic_merge(int *array, size_t size, size_t start, size_t seq,
 		char flow);
 void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow);
@@ -16,7 +16,7 @@ void bitonic_sort(int *array, size_t size);
  * @a: The first integer to swap.
  * @b: The second integer to swap.
  */
-void swap(int *a, int *b)
+void swap_ints(int *a, int *b)
 {
 	int tmp;
 
@@ -44,7 +44,7 @@ void bitonic_merge(int *array, size_t size, size_t start, size_t seq,
 		{
 			if ((flow == UP && array[i] > array[i + jump]) ||
 			    (flow == DOWN && array[i] < array[i + jump]))
-				swap(array + i, array + i + jump);
+				swap_ints(array + i, array + i + jump);
 		}
 		bitonic_merge(array, size, start, jump, flow);
 		bitonic_merge(array, size, start + jump, jump, flow);
@@ -80,7 +80,7 @@ void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow)
 
 /**
  * bitonic_sort - Sort an array of integers in ascending
- *  order using the bitonic sort algorithm.
+ *                order using the bitonic sort algorithm.
  * @array: An array of integers.
  * @size: The size of the array.
  *
